@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="orangePrimary" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#C2410C"/>
+      <stop offset="50%" style="stop-color:#F97316"/>
+      <stop offset="100%" style="stop-color:#FDBA74"/>
+    </linearGradient>
+    <linearGradient id="greenAccent" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#047857"/>
+      <stop offset="100%" style="stop-color:#34D399"/>
+    </linearGradient>
+    <filter id="glowEffect">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Clean background -->
+  <circle cx="100" cy="100" r="96" fill="#0F0F0F"/>
+  <circle cx="100" cy="100" r="94" fill="none" stroke="url(#orangePrimary)" stroke-width="2" opacity="0.15"/>
+
+  <!-- Stylized candlestick chart / bar graph -->
+  <g filter="url(#glowEffect)">
+    <!-- Bar 1 - shortest (bearish hint) -->
+    <rect x="45" y="110" width="20" height="50" rx="4" fill="url(#orangePrimary)" opacity="0.6"/>
+    <rect x="52" y="95" width="6" height="70" rx="2" fill="url(#orangePrimary)" opacity="0.4"/>
+
+    <!-- Bar 2 - medium -->
+    <rect x="75" y="85" width="20" height="75" rx="4" fill="url(#orangePrimary)" opacity="0.8"/>
+    <rect x="82" y="70" width="6" height="95" rx="2" fill="url(#orangePrimary)" opacity="0.5"/>
+
+    <!-- Bar 3 - tallest (bullish) -->
+    <rect x="105" y="55" width="20" height="105" rx="4" fill="url(#orangePrimary)"/>
+    <rect x="112" y="40" width="6" height="125" rx="2" fill="url(#orangePrimary)" opacity="0.6"/>
+
+    <!-- Bar 4 - growth continuation -->
+    <rect x="135" y="45" width="20" height="115" rx="4" fill="url(#orangePrimary)"/>
+    <rect x="142" y="35" width="6" height="130" rx="2" fill="url(#orangePrimary)" opacity="0.6"/>
+  </g>
+
+  <!-- Rising trend line -->
+  <path d="M40 135 Q70 115 90 100 Q110 80 130 60 Q145 45 165 35"
+        fill="none"
+        stroke="url(#greenAccent)"
+        stroke-width="4"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        filter="url(#glowEffect)"/>
+
+  <!-- AI/Prediction indicator - pulse rings at prediction point -->
+  <circle cx="155" cy="42" r="12" fill="none" stroke="#10B981" stroke-width="2" opacity="0.3"/>
+  <circle cx="155" cy="42" r="8" fill="none" stroke="#10B981" stroke-width="2" opacity="0.5"/>
+  <circle cx="155" cy="42" r="4" fill="#10B981"/>
+
+  <!-- Small data nodes along the trend -->
+  <circle cx="90" cy="100" r="4" fill="#10B981" opacity="0.8"/>
+  <circle cx="55" cy="125" r="3" fill="#F97316" opacity="0.8"/>
+</svg>

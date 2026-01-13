@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120" width="400" height="120">
+  <defs>
+    <linearGradient id="dalGradient" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#EA580C"/>
+      <stop offset="50%" style="stop-color:#F97316"/>
+      <stop offset="100%" style="stop-color:#FDBA74"/>
+    </linearGradient>
+    <linearGradient id="aiGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10B981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <filter id="logoGlow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Icon: Bull silhouette with chart -->
+  <g transform="translate(10, 10)">
+    <circle cx="50" cy="50" r="48" fill="#0F0F0F"/>
+    <circle cx="50" cy="50" r="46" fill="none" stroke="url(#dalGradient)" stroke-width="2" opacity="0.25"/>
+
+    <!-- Stylized bull head (simplified) -->
+    <g filter="url(#logoGlow)">
+      <!-- Horns -->
+      <path d="M25 45 Q18 28 12 20 Q22 25 30 38 Z" fill="url(#dalGradient)"/>
+      <path d="M75 45 Q82 28 88 20 Q78 25 70 38 Z" fill="url(#dalGradient)"/>
+
+      <!-- Head shape -->
+      <ellipse cx="50" cy="55" rx="28" ry="24" fill="url(#dalGradient)"/>
+
+      <!-- Inner face -->
+      <ellipse cx="50" cy="55" rx="20" ry="17" fill="#0F0F0F"/>
+
+      <!-- Eyes -->
+      <circle cx="40" cy="52" r="4" fill="#F97316"/>
+      <circle cx="60" cy="52" r="4" fill="#F97316"/>
+      <circle cx="41" cy="51" r="1.5" fill="#FFF"/>
+      <circle cx="61" cy="51" r="1.5" fill="#FFF"/>
+
+      <!-- Nose -->
+      <circle cx="45" cy="65" r="2" fill="#1A1A1A"/>
+      <circle cx="55" cy="65" r="2" fill="#1A1A1A"/>
+    </g>
+
+    <!-- Chart line through -->
+    <path d="M20 70 L35 60 L50 55 L65 45 L80 40"
+          fill="none"
+          stroke="url(#aiGradient)"
+          stroke-width="3"
+          stroke-linecap="round"/>
+    <circle cx="80" cy="40" r="4" fill="#10B981"/>
+  </g>
+
+  <!-- Main text: "DalalAI" -->
+  <text x="120" y="70"
+        font-family="'Clash Display', 'SF Pro Display', -apple-system, sans-serif"
+        font-size="46"
+        font-weight="700">
+    <tspan fill="url(#dalGradient)">Dalal</tspan><tspan fill="url(#aiGradient)">AI</tspan>
+  </text>
+
+  <!-- Tagline -->
+  <text x="122" y="95"
+        font-family="'General Sans', 'SF Pro Text', -apple-system, sans-serif"
+        font-size="12"
+        font-weight="500"
+        fill="#666666"
+        letter-spacing="1.5">
+    SMART PREDICTIONS FOR INDIAN MARKETS
+  </text>
+</svg>

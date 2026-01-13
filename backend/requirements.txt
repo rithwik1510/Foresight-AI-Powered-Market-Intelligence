@@ -1,0 +1,73 @@
+# FastAPI & Server
+fastapi==0.109.0
+uvicorn[standard]==0.27.0
+python-multipart==0.0.6
+
+# Database
+sqlalchemy==2.0.25
+asyncpg==0.29.0
+alembic==1.13.1
+
+# Settings & Validation
+pydantic==2.5.3
+pydantic-settings==2.1.0
+
+# Cache
+redis==5.0.1
+
+# Data Sources
+yfinance==0.2.36
+httpx==0.26.0
+
+# Data Processing
+pandas==2.2.0
+numpy==1.26.3
+
+# Portfolio Optimization
+PyPortfolioOpt>=1.5.6
+scipy==1.12.0
+
+# Machine Learning - Core
+scikit-learn==1.4.0
+
+# ML - Time Series Forecasting
+prophet==1.1.5
+statsmodels==0.14.1
+pmdarima==2.0.4
+
+# ML - Gradient Boosting
+xgboost==2.0.3
+lightgbm==4.3.0
+
+# ML - Technical Analysis
+ta==0.11.0
+
+# ML - Model Persistence
+joblib==1.3.2
+
+# Sentiment Analysis
+vaderSentiment==3.3.2
+textblob==0.18.0
+
+# News & RSS Parsing
+feedparser==6.0.11
+beautifulsoup4==4.12.3
+
+# Reddit API
+praw==7.7.1
+
+# Economic Data
+fredapi==0.5.1
+
+# Job Scheduling
+apscheduler==3.10.4
+
+# AI - Google Gemini
+google-generativeai==0.4.0
+
+# Authentication
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+
+# Utilities
+python-dateutil==2.8.2

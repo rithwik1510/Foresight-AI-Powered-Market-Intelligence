@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="fsAltOrange" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#9A3412"/>
+      <stop offset="50%" style="stop-color:#F97316"/>
+      <stop offset="100%" style="stop-color:#FDBA74"/>
+    </linearGradient>
+    <linearGradient id="fsAltGreen" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#059669"/>
+      <stop offset="100%" style="stop-color:#34D399"/>
+    </linearGradient>
+    <filter id="fsAltGlow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <circle cx="100" cy="100" r="96" fill="#0A0A0A"/>
+  <circle cx="100" cy="100" r="93" fill="none" stroke="url(#fsAltOrange)" stroke-width="1" opacity="0.15"/>
+
+  <!-- Stylized "F" forming a telescope/lens looking forward -->
+  <g filter="url(#fsAltGlow)">
+    <!-- Main F vertical bar -->
+    <path d="M55 45 L55 155 Q55 165 65 165 L75 165 Q85 165 85 155 L85 115"
+          fill="url(#fsAltOrange)"
+          stroke="none"/>
+
+    <!-- F top horizontal -->
+    <path d="M55 45 Q55 35 65 35 L130 35 Q140 35 140 45 L140 55 Q140 65 130 65 L85 65"
+          fill="url(#fsAltOrange)"
+          stroke="none"/>
+
+    <!-- F middle horizontal (shorter) -->
+    <path d="M85 85 L115 85 Q125 85 125 95 L125 100 Q125 110 115 110 L85 110"
+          fill="url(#fsAltOrange)"
+          stroke="none"/>
+  </g>
+
+  <!-- Lens/Vision circle (looking into the future) -->
+  <g filter="url(#fsAltGlow)">
+    <circle cx="145" cy="130" r="35" fill="#141414" stroke="url(#fsAltOrange)" stroke-width="3"/>
+    <circle cx="145" cy="130" r="28" fill="none" stroke="#F97316" stroke-width="1" opacity="0.3"/>
+    <circle cx="145" cy="130" r="20" fill="none" stroke="#F97316" stroke-width="1" opacity="0.2"/>
+
+    <!-- Chart inside the lens (what we "see") -->
+    <path d="M122 145 L132 138 L142 142 L152 128 L165 118"
+          fill="none"
+          stroke="url(#fsAltGreen)"
+          stroke-width="3"
+          stroke-linecap="round"
+          stroke-linejoin="round"/>
+
+    <!-- Prediction glow point -->
+    <circle cx="165" cy="118" r="5" fill="#10B981" filter="url(#fsAltGlow)"/>
+    <circle cx="165" cy="118" r="8" fill="none" stroke="#10B981" stroke-width="1.5" opacity="0.4"/>
+
+    <!-- Lens reflection -->
+    <ellipse cx="135" cy="120" rx="5" ry="3" fill="#FFF" opacity="0.15"/>
+  </g>
+
+  <!-- Forward arrows (looking ahead) -->
+  <g stroke="#F97316" stroke-width="2" fill="none" opacity="0.4" stroke-linecap="round">
+    <path d="M160 55 L175 55 M170 48 L177 55 L170 62"/>
+    <path d="M150 75 L165 75 M160 68 L167 75 L160 82"/>
+  </g>
+</svg>

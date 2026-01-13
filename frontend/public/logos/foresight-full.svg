@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 120" width="440" height="120">
+  <defs>
+    <linearGradient id="fsFull_OrangeGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#C2410C"/>
+      <stop offset="50%" style="stop-color:#F97316"/>
+      <stop offset="100%" style="stop-color:#FB923C"/>
+    </linearGradient>
+    <linearGradient id="fsFull_GreenGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#047857"/>
+      <stop offset="100%" style="stop-color:#10B981"/>
+    </linearGradient>
+    <linearGradient id="fsFull_IrisGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FDBA74"/>
+      <stop offset="40%" style="stop-color:#F97316"/>
+      <stop offset="100%" style="stop-color:#9A3412"/>
+    </linearGradient>
+    <linearGradient id="fsFull_TextGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#FDBA74"/>
+      <stop offset="50%" style="stop-color:#F97316"/>
+      <stop offset="100%" style="stop-color:#EA580C"/>
+    </linearGradient>
+    <filter id="fsFull_Glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="fsFull_TextGlow">
+      <feGaussianBlur stdDeviation="1" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <clipPath id="fsFull_eyeClip">
+      <ellipse cx="50" cy="50" rx="32" ry="22"/>
+    </clipPath>
+  </defs>
+
+  <!-- Icon Section -->
+  <g transform="translate(10, 10)">
+    <!-- Background circle -->
+    <circle cx="50" cy="50" r="48" fill="#0A0A0A"/>
+    <circle cx="50" cy="50" r="46" fill="none" stroke="url(#fsFull_OrangeGrad)" stroke-width="1.5" opacity="0.25"/>
+
+    <!-- Eye shape -->
+    <g filter="url(#fsFull_Glow)">
+      <ellipse cx="50" cy="50" rx="34" ry="24" fill="#141414" stroke="url(#fsFull_OrangeGrad)" stroke-width="2.5"/>
+
+      <g clip-path="url(#fsFull_eyeClip)">
+        <!-- Iris -->
+        <circle cx="50" cy="50" r="19" fill="url(#fsFull_IrisGrad)"/>
+        <circle cx="50" cy="50" r="16" fill="none" stroke="#C2410C" stroke-width="0.75" opacity="0.4"/>
+        <circle cx="50" cy="50" r="12" fill="none" stroke="#9A3412" stroke-width="0.5" opacity="0.3"/>
+
+        <!-- Pupil -->
+        <circle cx="50" cy="50" r="8" fill="#0A0A0A"/>
+
+        <!-- Chart in pupil -->
+        <path d="M42 54 L46 51 L50 53 L54 47 L58 44"
+              fill="none"
+              stroke="url(#fsFull_GreenGrad)"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"/>
+
+        <!-- Prediction point -->
+        <circle cx="58" cy="44" r="2.5" fill="#10B981"/>
+
+        <!-- Reflection -->
+        <ellipse cx="44" cy="45" rx="3" ry="2" fill="#FFF" opacity="0.25"/>
+      </g>
+    </g>
+
+    <!-- Subtle eyelid curves -->
+    <path d="M16 50 Q32 26 50 26 Q68 26 84 50" fill="none" stroke="url(#fsFull_OrangeGrad)" stroke-width="1.5" opacity="0.25"/>
+    <path d="M16 50 Q32 74 50 74 Q68 74 84 50" fill="none" stroke="url(#fsFull_OrangeGrad)" stroke-width="1.5" opacity="0.25"/>
+  </g>
+
+  <!-- Main Text: "Foresight" -->
+  <g filter="url(#fsFull_TextGlow)">
+    <text x="125" y="72"
+          font-family="'Clash Display', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif"
+          font-size="52"
+          font-weight="700"
+          fill="url(#fsFull_TextGrad)"
+          letter-spacing="-1">
+      Foresight
+    </text>
+  </g>
+
+  <!-- Tagline -->
+  <text x="127" y="97"
+        font-family="'General Sans', 'SF Pro Text', -apple-system, BlinkMacSystemFont, sans-serif"
+        font-size="13"
+        font-weight="500"
+        fill="#666666"
+        letter-spacing="2.5">
+    AI-POWERED MARKET INTELLIGENCE
+  </text>
+</svg>

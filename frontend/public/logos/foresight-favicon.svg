@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <defs>
+    <linearGradient id="fsFav_Orange" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#C2410C"/>
+      <stop offset="100%" style="stop-color:#FB923C"/>
+    </linearGradient>
+    <linearGradient id="fsFav_Iris" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FDBA74"/>
+      <stop offset="100%" style="stop-color:#EA580C"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="32" height="32" rx="6" fill="#0A0A0A"/>
+
+  <!-- Simplified eye -->
+  <ellipse cx="16" cy="16" rx="11" ry="8" fill="#141414" stroke="url(#fsFav_Orange)" stroke-width="2"/>
+
+  <!-- Iris -->
+  <circle cx="16" cy="16" r="6" fill="url(#fsFav_Iris)"/>
+
+  <!-- Pupil -->
+  <circle cx="16" cy="16" r="3" fill="#0A0A0A"/>
+
+  <!-- Chart line -->
+  <path d="M13 18 L15 16 L17 17 L19 14"
+        fill="none"
+        stroke="#10B981"
+        stroke-width="1.5"
+        stroke-linecap="round"/>
+
+  <!-- Prediction dot -->
+  <circle cx="19" cy="14" r="1.5" fill="#10B981"/>
+</svg>

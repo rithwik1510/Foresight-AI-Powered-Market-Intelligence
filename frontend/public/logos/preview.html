@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foresight - Logo Preview</title>
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@700,600,500&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'General Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #0A0A0A;
+      color: #F2F2F2;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      margin-bottom: 60px;
+      background: linear-gradient(180deg, rgba(249,115,22,0.08) 0%, transparent 100%);
+      border-radius: 24px;
+      border: 1px solid #222;
+    }
+
+    .hero-logo {
+      margin-bottom: 30px;
+    }
+
+    .hero-logo img {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+    }
+
+    .hero h1 {
+      font-family: 'Clash Display', sans-serif;
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+      background: linear-gradient(135deg, #FDBA74, #F97316, #EA580C);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #888;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .tagline {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 8px 20px;
+      background: rgba(249,115,22,0.1);
+      border: 1px solid rgba(249,115,22,0.3);
+      border-radius: 50px;
+      font-size: 0.85rem;
+      color: #F97316;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    /* Section Styles */
+    .section {
+      margin-bottom: 60px;
+    }
+
+    .section-title {
+      font-family: 'Clash Display', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 25px;
+      color: #F97316;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #222;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-title::before {
+      content: '';
+      width: 4px;
+      height: 24px;
+      background: linear-gradient(180deg, #F97316, #EA580C);
+      border-radius: 2px;
+    }
+
+    /* Grid Layouts */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    }
+
+    /* Logo Cards */
+    .logo-card {
+      background: #111111;
+      border-radius: 16px;
+      padding: 35px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 1px solid #1A1A1A;
+      transition: all 0.3s ease;
+    }
+
+    .logo-card:hover {
+      border-color: #F97316;
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(249, 115, 22, 0.12);
+    }
+
+    .logo-card img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    .logo-card.icon img {
+      width: 140px;
+      height: 140px;
+    }
+
+    .logo-card.full img {
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .logo-card.featured {
+      background: linear-gradient(135deg, #1a1510 0%, #111111 100%);
+      border: 2px solid #F97316;
+      position: relative;
+    }
+
+    .logo-card.featured::after {
+      content: 'PRIMARY';
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: #F97316;
+      color: #000;
+      font-size: 0.65rem;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .logo-name {
+      font-size: 0.9rem;
+      color: #666;
+      text-align: center;
+      font-weight: 500;
+    }
+
+    .logo-name strong {
+      color: #999;
+    }
+
+    /* Light background card */
+    .light-bg {
+      background: #FAF9F6;
+      border-color: #E5E5E5;
+    }
+
+    .light-bg .logo-name {
+      color: #555;
+    }
+
+    .light-bg:hover {
+      border-color: #EA580C;
+    }
+
+    /* Color Palette */
+    .color-palette {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 30px;
+      background: #111;
+      border-radius: 16px;
+      border: 1px solid #1A1A1A;
+    }
+
+    .color-swatch {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .color-box {
+      width: 70px;
+      height: 70px;
+      border-radius: 14px;
+      margin-bottom: 10px;
+      border: 2px solid #222;
+      transition: transform 0.2s ease;
+    }
+
+    .color-box:hover {
+      transform: scale(1.1);
+    }
+
+    .color-label {
+      font-size: 0.75rem;
+      color: #888;
+      font-weight: 500;
+    }
+
+    .color-hex {
+      font-size: 0.8rem;
+      color: #555;
+      font-family: 'SF Mono', Monaco, monospace;
+    }
+
+    /* Usage Guide */
+    .usage-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .usage-item {
+      background: #111;
+      padding: 20px;
+      border-radius: 12px;
+      border: 1px solid #1A1A1A;
+      text-align: center;
+    }
+
+    .usage-item h4 {
+      color: #F97316;
+      margin-bottom: 8px;
+      font-family: 'Clash Display', sans-serif;
+      font-size: 1rem;
+    }
+
+    .usage-item p {
+      font-size: 0.85rem;
+      color: #666;
+    }
+
+    .usage-item code {
+      display: block;
+      margin-top: 10px;
+      padding: 8px;
+      background: #0A0A0A;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      color: #F97316;
+      font-family: 'SF Mono', Monaco, monospace;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 40px 20px;
+      margin-top: 60px;
+      border-top: 1px solid #1A1A1A;
+      color: #444;
+      font-size: 0.85rem;
+    }
+
+    .footer a {
+      color: #F97316;
+      text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-logo">
+        <img src="foresight-full.svg" alt="Foresight Logo">
+      </div>
+      <h1>Foresight</h1>
+      <p>See the market before it moves. AI-powered investment intelligence for Indian markets.</p>
+      <span class="tagline">AI-Powered Market Intelligence</span>
+    </section>
+
+    <!-- Primary Logos -->
+    <section class="section">
+      <h2 class="section-title">Primary Logos</h2>
+      <div class="grid grid-2">
+        <div class="logo-card full featured">
+          <img src="foresight-full.svg" alt="Foresight Full Logo Dark">
+          <span class="logo-name"><strong>foresight-full.svg</strong> — Dark backgrounds</span>
+        </div>
+        <div class="logo-card full light-bg">
+          <img src="foresight-full-light.svg" alt="Foresight Full Logo Light">
+          <span class="logo-name"><strong>foresight-full-light.svg</strong> — Light backgrounds</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Icon Variations -->
+    <section class="section">
+      <h2 class="section-title">Icon Variations</h2>
+      <div class="grid">
+        <div class="logo-card icon featured">
+          <img src="foresight-icon.svg" alt="Foresight Icon">
+          <span class="logo-name"><strong>foresight-icon.svg</strong> — App icon (dark)</span>
+        </div>
+        <div class="logo-card icon light-bg">
+          <img src="foresight-icon-light.svg" alt="Foresight Icon Light">
+          <span class="logo-name"><strong>foresight-icon-light.svg</strong> — App icon (light)</span>
+        </div>
+        <div class="logo-card icon">
+          <img src="foresight-icon-alt.svg" alt="Foresight Icon Alt">
+          <span class="logo-name"><strong>foresight-icon-alt.svg</strong> — Alternative "F" icon</span>
+        </div>
+        <div class="logo-card icon">
+          <img src="foresight-favicon.svg" alt="Favicon" style="width: 64px; height: 64px;">
+          <span class="logo-name"><strong>foresight-favicon.svg</strong> — 32x32 Favicon</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wordmark -->
+    <section class="section">
+      <h2 class="section-title">Wordmark Only</h2>
+      <div class="grid grid-2">
+        <div class="logo-card full">
+          <img src="foresight-wordmark.svg" alt="Foresight Wordmark">
+          <span class="logo-name"><strong>foresight-wordmark.svg</strong> — Text only for headers</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Color Palette -->
+    <section class="section">
+      <h2 class="section-title">Brand Color Palette</h2>
+      <div class="color-palette">
+        <div class="color-swatch">
+          <div class="color-box" style="background: #F97316;"></div>
+          <span class="color-label">Primary</span>
+          <span class="color-hex">#F97316</span>
+        </div>
+        <div class="color-swatch">
+          <div class="color-box" style="background: #FB923C;"></div>
+          <span class="color-label">Light</span>
+          <span class="color-hex">#FB923C</span>
+        </div>
+        <div class="color-swatch">
+          <div class="color-box" style="background: #FDBA74;"></div>
+          <span class="color-label">Lighter</span>
+          <span class="color-hex">#FDBA74</span>
+        </div>
+        <div class="color-swatch">
+          <div class="color-box" style="background: #EA580C;"></div>
+          <span class="color-label">Dark</span>
+          <span class="color-hex">#EA580C</span>
+        </div>
+        <div class="color-swatch">
+          <div class="color-box" style="background: #C2410C;"></div>
+          <span class="color-label">Darker</span>
+          <span class="color-hex">#C2410C</span>
+        </div>
+        <div class="color-swatch">
+          <div class="color-box" style="background: #10B981;"></div>
+          <span class="color-label">Bullish</span>
+          <span class="color-hex">#10B981</span>
+        </div>
+        <div class="color-swatch">
+          <div class="color-box" style="background: #EF4444;"></div>
+          <span class="color-label">Bearish</span>
+          <span class="color-hex">#EF4444</span>
+        </div>
+        <div class="color-swatch">
+          <div class="color-box" style="background: #0A0A0A; border-color: #333;"></div>
+          <span class="color-label">Background</span>
+          <span class="color-hex">#0A0A0A</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Usage Guide -->
+    <section class="section">
+      <h2 class="section-title">Usage Guide</h2>
+      <div class="usage-grid">
+        <div class="usage-item">
+          <h4>Website Header</h4>
+          <p>Full logo with icon + text</p>
+          <code>foresight-full.svg</code>
+        </div>
+        <div class="usage-item">
+          <h4>Mobile App</h4>
+          <p>Icon only for app launcher</p>
+          <code>foresight-icon.svg</code>
+        </div>
+        <div class="usage-item">
+          <h4>Browser Tab</h4>
+          <p>Compact favicon</p>
+          <code>foresight-favicon.svg</code>
+        </div>
+        <div class="usage-item">
+          <h4>Social Media</h4>
+          <p>Square icon for profiles</p>
+          <code>foresight-icon.svg</code>
+        </div>
+      </div>
+    </section>
+
+    <!-- Logo Concept -->
+    <section class="section">
+      <h2 class="section-title">Design Concept</h2>
+      <div class="logo-card" style="text-align: left; padding: 30px 40px;">
+        <h3 style="color: #F97316; margin-bottom: 15px; font-family: 'Clash Display', sans-serif;">The Eye That Sees Tomorrow</h3>
+        <p style="color: #888; line-height: 1.7; margin-bottom: 15px;">
+          The Foresight logo features a stylized eye with a rising stock chart embedded in its pupil. This symbolizes the platform's core purpose: <strong style="color: #F97316;">seeing market movements before they happen</strong>.
+        </p>
+        <ul style="color: #666; line-height: 2; padding-left: 20px;">
+          <li><strong style="color: #999;">The Eye</strong> — Represents vision, insight, and the ability to see what others miss</li>
+          <li><strong style="color: #999;">The Chart Line</strong> — A green upward trend showing growth and bullish predictions</li>
+          <li><strong style="color: #999;">The Prediction Point</strong> — The glowing green dot represents the future price point the AI predicts</li>
+          <li><strong style="color: #999;">Neural Nodes</strong> — Subtle data points around the eye represent AI/ML processing</li>
+          <li><strong style="color: #999;">Orange Gradient</strong> — Matches the project's primary brand color for consistency</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>Foresight — AI-Powered Market Intelligence for Indian Markets</p>
+      <p style="margin-top: 10px;">Built with ML predictions, sentiment analysis, and global market factors</p>
+    </footer>
+
+  </div>
+</body>
+</html>

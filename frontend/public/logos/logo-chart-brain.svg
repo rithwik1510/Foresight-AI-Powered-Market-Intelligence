@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="primaryGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FDBA74"/>
+      <stop offset="40%" style="stop-color:#F97316"/>
+      <stop offset="100%" style="stop-color:#C2410C"/>
+    </linearGradient>
+    <linearGradient id="greenGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#059669"/>
+      <stop offset="100%" style="stop-color:#10B981"/>
+    </linearGradient>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <clipPath id="brainClip">
+      <path d="M100 25
+               Q145 25 160 55
+               Q175 85 165 115
+               Q160 135 145 150
+               Q125 170 100 175
+               Q75 170 55 150
+               Q40 135 35 115
+               Q25 85 40 55
+               Q55 25 100 25 Z"/>
+    </clipPath>
+  </defs>
+
+  <!-- Outer ring -->
+  <circle cx="100" cy="100" r="95" fill="none" stroke="#F97316" stroke-width="1" opacity="0.2"/>
+  <circle cx="100" cy="100" r="92" fill="none" stroke="#F97316" stroke-width="0.5" opacity="0.1"/>
+
+  <!-- Brain outline shape -->
+  <path d="M100 25
+           Q145 25 160 55
+           Q175 85 165 115
+           Q160 135 145 150
+           Q125 170 100 175
+           Q75 170 55 150
+           Q40 135 35 115
+           Q25 85 40 55
+           Q55 25 100 25 Z"
+        fill="#141414"
+        stroke="url(#primaryGrad)"
+        stroke-width="3"/>
+
+  <!-- Brain fold details -->
+  <g stroke="#F97316" stroke-width="1.5" fill="none" opacity="0.4" stroke-linecap="round">
+    <!-- Left hemisphere folds -->
+    <path d="M50 70 Q60 65 70 75 Q80 85 75 95"/>
+    <path d="M45 100 Q55 95 65 105 Q70 115 60 125"/>
+    <path d="M55 135 Q70 130 80 140"/>
+
+    <!-- Right hemisphere folds -->
+    <path d="M150 70 Q140 65 130 75 Q120 85 125 95"/>
+    <path d="M155 100 Q145 95 135 105 Q130 115 140 125"/>
+    <path d="M145 135 Q130 130 120 140"/>
+
+    <!-- Center connection -->
+    <path d="M100 45 L100 160" stroke-dasharray="3,6"/>
+  </g>
+
+  <!-- Neural nodes -->
+  <g fill="url(#primaryGrad)" filter="url(#softGlow)">
+    <circle cx="65" cy="70" r="5"/>
+    <circle cx="135" cy="70" r="5"/>
+    <circle cx="55" cy="105" r="4"/>
+    <circle cx="145" cy="105" r="4"/>
+    <circle cx="70" cy="140" r="5"/>
+    <circle cx="130" cy="140" r="5"/>
+    <circle cx="100" cy="60" r="6"/>
+    <circle cx="100" cy="100" r="7"/>
+    <circle cx="100" cy="145" r="5"/>
+  </g>
+
+  <!-- Neural connections -->
+  <g stroke="#F97316" stroke-width="1" opacity="0.5">
+    <line x1="65" y1="70" x2="100" y2="60"/>
+    <line x1="135" y1="70" x2="100" y2="60"/>
+    <line x1="65" y1="70" x2="100" y2="100"/>
+    <line x1="135" y1="70" x2="100" y2="100"/>
+    <line x1="55" y1="105" x2="100" y2="100"/>
+    <line x1="145" y1="105" x2="100" y2="100"/>
+    <line x1="70" y1="140" x2="100" y2="145"/>
+    <line x1="130" y1="140" x2="100" y2="145"/>
+    <line x1="100" y1="100" x2="100" y2="145"/>
+    <line x1="70" y1="140" x2="100" y2="100"/>
+    <line x1="130" y1="140" x2="100" y2="100"/>
+  </g>
+
+  <!-- Rising chart line through the brain -->
+  <g clip-path="url(#brainClip)">
+    <path d="M30 150 L50 135 L70 140 L85 115 L100 120 L115 95 L135 100 L155 70 L175 55"
+          fill="none"
+          stroke="url(#greenGrad)"
+          stroke-width="4"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          filter="url(#softGlow)"/>
+
+    <!-- Chart glow area -->
+    <path d="M30 150 L50 135 L70 140 L85 115 L100 120 L115 95 L135 100 L155 70 L175 55 L175 175 L30 175 Z"
+          fill="url(#greenGrad)"
+          opacity="0.1"/>
+  </g>
+
+  <!-- Key data points -->
+  <g filter="url(#softGlow)">
+    <circle cx="100" cy="120" r="5" fill="#10B981"/>
+    <circle cx="135" cy="100" r="4" fill="#10B981"/>
+    <circle cx="155" cy="70" r="6" fill="#10B981"/>
+  </g>
+
+  <!-- Upward arrow indicator -->
+  <path d="M155 70 L160 58 L165 70 M160 58 L160 50"
+        fill="none"
+        stroke="#10B981"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+</svg>

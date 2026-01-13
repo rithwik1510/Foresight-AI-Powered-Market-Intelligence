@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 120" width="420" height="120">
+  <defs>
+    <linearGradient id="alphaGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#C2410C"/>
+      <stop offset="30%" style="stop-color:#F97316"/>
+      <stop offset="100%" style="stop-color:#FB923C"/>
+    </linearGradient>
+    <linearGradient id="bullGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10B981"/>
+      <stop offset="100%" style="stop-color:#047857"/>
+    </linearGradient>
+    <filter id="brandGlow">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <clipPath id="circleClip">
+      <circle cx="50" cy="50" r="44"/>
+    </clipPath>
+  </defs>
+
+  <!-- Icon: Alpha symbol merged with bull -->
+  <g transform="translate(12, 10)">
+    <!-- Background -->
+    <circle cx="50" cy="50" r="48" fill="#101010"/>
+    <circle cx="50" cy="50" r="46" fill="none" stroke="url(#alphaGrad)" stroke-width="2" opacity="0.2"/>
+
+    <!-- Stylized Alpha (α) symbol forming a bull -->
+    <g filter="url(#brandGlow)" clip-path="url(#circleClip)">
+      <!-- Alpha base shape (resembling α and bull head) -->
+      <path d="M50 20
+               Q70 20 80 35
+               Q88 50 82 65
+               Q78 78 65 82
+               Q50 90 35 82
+               Q22 78 18 65
+               Q12 50 20 35
+               Q30 20 50 20 Z"
+            fill="url(#alphaGrad)"/>
+
+      <!-- Inner cutout creating the alpha/bull look -->
+      <path d="M50 32
+               Q62 32 68 42
+               Q74 52 70 62
+               Q66 72 55 75
+               Q50 78 45 75
+               Q34 72 30 62
+               Q26 52 32 42
+               Q38 32 50 32 Z"
+            fill="#101010"/>
+
+      <!-- Alpha tail/horn left -->
+      <path d="M25 50 Q15 35 10 25 Q20 30 28 42 Z"
+            fill="url(#alphaGrad)"/>
+
+      <!-- Alpha tail/horn right -->
+      <path d="M75 50 Q85 35 90 25 Q80 30 72 42 Z"
+            fill="url(#alphaGrad)"/>
+
+      <!-- Eye left -->
+      <circle cx="40" cy="50" r="5" fill="#F97316"/>
+      <circle cx="41" cy="49" r="2" fill="#FFF"/>
+
+      <!-- Eye right -->
+      <circle cx="60" cy="50" r="5" fill="#F97316"/>
+      <circle cx="61" cy="49" r="2" fill="#FFF"/>
+
+      <!-- Nose dots -->
+      <circle cx="45" cy="65" r="2.5" fill="#1A1A1A"/>
+      <circle cx="55" cy="65" r="2.5" fill="#1A1A1A"/>
+    </g>
+
+    <!-- Rising trend indicator -->
+    <path d="M75 85 L85 75 L82 75 L82 68"
+          fill="none"
+          stroke="url(#bullGrad)"
+          stroke-width="3"
+          stroke-linecap="round"
+          stroke-linejoin="round"/>
+  </g>
+
+  <!-- Text: "Alpha" -->
+  <text x="125" y="68"
+        font-family="'Clash Display', 'SF Pro Display', -apple-system, sans-serif"
+        font-size="44"
+        font-weight="700"
+        fill="url(#alphaGrad)">
+    Alpha
+  </text>
+
+  <!-- Text: "bull" with green accent -->
+  <text x="250" y="68"
+        font-family="'Clash Display', 'SF Pro Display', -apple-system, sans-serif"
+        font-size="44"
+        font-weight="700"
+        fill="url(#bullGrad)">
+    bull
+  </text>
+
+  <!-- Tagline -->
+  <text x="127" y="93"
+        font-family="'General Sans', 'SF Pro Text', -apple-system, sans-serif"
+        font-size="12"
+        font-weight="500"
+        fill="#777777"
+        letter-spacing="1.8">
+    GENERATE ALPHA WITH AI PRECISION
+  </text>
+</svg>

@@ -1,0 +1,118 @@
+/* Display Font: Clash Display - Geometric, Bold, Distinctive */
+@import url('https://api.fontshare.com/v2/css?f[]=clash-display@700,600,500&display=swap');
+
+/* Body Font: General Sans - Clean, Modern, Readable */
+@import url('https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600&display=swap');
+
+@import "tailwindcss";
+
+@plugin "tailwindcss-animate";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-display: 'Clash Display', sans-serif;
+  --font-body: 'General Sans', sans-serif;
+
+  /* Claude Light Mode Theme - Cream & Charcoal */
+  --color-background: hsl(40 20% 98%); /* #FAF9F6 - Off-white / Cream */
+  --color-foreground: hsl(0 0% 10%); /* #1A1A1A - Soft Black */
+
+  --color-card: hsl(0 0% 100%); /* #FFFFFF - Pure White Cards */
+  --color-card-foreground: hsl(0 0% 10%);
+
+  --color-popover: hsl(0 0% 100%);
+  --color-popover-foreground: hsl(0 0% 10%);
+
+  --color-primary: hsl(25 90% 50%); /* Claude Orange */
+  --color-primary-foreground: hsl(0 0% 100%);
+
+  --color-secondary: hsl(40 10% 94%); /* Light Beige for secondary backgrounds */
+  --color-secondary-foreground: hsl(0 0% 10%);
+
+  --color-muted: hsl(40 10% 94%);
+  --color-muted-foreground: hsl(0 0% 40%);
+
+  --color-accent: hsl(40 20% 92%);
+  --color-accent-foreground: hsl(0 0% 10%);
+
+  --color-destructive: hsl(0 84% 60%);
+  --color-destructive-foreground: hsl(0 0% 98%);
+
+  --color-border: hsl(0 0% 90%); /* Subtle light grey borders */
+  --color-input: hsl(0 0% 90%);
+  --color-ring: hsl(25 90% 50%);
+
+  --radius-lg: 0.5rem;
+  --radius-md: calc(0.5rem - 2px);
+  --radius-sm: calc(0.5rem - 4px);
+
+  /* Semantic Colors - Adjusted for Light Mode */
+  --color-bullish: #059669; /* Emerald 600 - darker for contrast */
+  --color-bearish: #DC2626; /* Red 600 */
+  --color-neutral: #D97706; /* Amber 600 */
+
+  --animate-fadeIn: fadeIn 0.2s ease-out;
+  --animate-scroll: scroll 40s linear infinite;
+
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  @keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+}
+
+/* Dark Mode Theme - Matte Black */
+.dark {
+  --color-background: hsl(0 0% 8%); /* #141414 - Matte Black */
+  --color-foreground: hsl(0 0% 95%); /* #F2F2F2 - Off-White */
+
+  --color-card: hsl(0 0% 12%); /* #1F1F1F - Dark Card */
+  --color-card-foreground: hsl(0 0% 95%);
+
+  --color-popover: hsl(0 0% 12%);
+  --color-popover-foreground: hsl(0 0% 95%);
+
+  --color-primary: hsl(25 90% 50%); /* Claude Orange */
+  --color-primary-foreground: hsl(0 0% 10%);
+
+  --color-secondary: hsl(0 0% 16%); /* #292929 - Slightly lighter */
+  --color-secondary-foreground: hsl(0 0% 95%);
+
+  --color-muted: hsl(0 0% 16%);
+  --color-muted-foreground: hsl(0 0% 60%);
+
+  --color-accent: hsl(0 0% 20%);
+  --color-accent-foreground: hsl(0 0% 95%);
+
+  --color-destructive: hsl(0 84% 60%);
+  --color-destructive-foreground: hsl(0 0% 95%);
+
+  --color-border: hsl(0 0% 20%); /* #333333 - Subtle border */
+  --color-input: hsl(0 0% 20%);
+  --color-ring: hsl(25 90% 50%);
+
+  /* Semantic Colors - Brighter for dark mode */
+  --color-bullish: #10B981; /* Emerald 500 - brighter */
+  --color-bearish: #EF4444; /* Red 500 - brighter */
+  --color-neutral: #F59E0B; /* Amber 500 - brighter */
+}
+
+@layer base {
+  * {
+    @apply border-border transition-colors duration-200;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Focus-visible states for accessibility */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-background;
+  }
+}

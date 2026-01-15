@@ -20,12 +20,6 @@
 </p>
 
 <p align="center">
-  <img src="docs/screenshots/mutual-funds.png" alt="Mutual Fund Analyzer" width="100%"/>
-  <br/>
-  <em>Mutual Fund Analyzer - Upload CAS statements or manually add funds for portfolio health check</em>
-</p>
-
-<p align="center">
   <img src="docs/screenshots/ai-advisor.png" alt="AI Advisor" width="100%"/>
   <br/>
   <em>AI Advisor - Chat interface powered by Gemini Pro for personalized investment guidance</em>

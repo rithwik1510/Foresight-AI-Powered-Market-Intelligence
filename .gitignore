@@ -136,6 +136,8 @@ nul
 *.jpeg
 !frontend/public/**/*.png
 !frontend/public/**/*.jpg
+!docs/screenshots/**/*.png
+!docs/screenshots/**/*.jpg
 
 # Plan files (development notes)
 *-plan*.md

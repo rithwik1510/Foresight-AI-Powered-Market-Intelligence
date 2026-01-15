@@ -1,60 +1,144 @@
-# Foresight: AI-Powered Market Intelligence 🚀
+# Foresight: AI-Powered Market Intelligence
 
 ![Project Status](https://img.shields.io/badge/Status-Active_Development-brightgreen)
 ![Python](https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.109-009688?logo=fastapi&logoColor=white)
-![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js&logoColor=white)
-![Tailwind](https://img.shields.io/badge/Tailwind_CSS-4.0-38B2AC?logo=tailwind-css&logoColor=white)
+![Next.js](https://img.shields.io/badge/Next.js-14-black?logo=next.js&logoColor=white)
+![Tailwind](https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC?logo=tailwind-css&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-blue.svg)
 
 **Foresight** is an institutional-grade investment analysis platform engineered for the Indian markets (NSE/BSE). It bridges the gap between retail investors and hedge-fund technology by combining an ensemble of **5 advanced Machine Learning models** with **Generative AI** to provide actionable, data-driven market insights.
 
 ---
 
-## 🧠 Core Intelligence
+## Demo
+
+<p align="center">
+  <img src="docs/screenshots/dashboard.png" alt="Dashboard" width="100%"/>
+  <br/>
+  <em>Dashboard - Portfolio overview with real-time market data, trending stocks, and watchlist</em>
+</p>
+
+<p align="center">
+  <img src="docs/screenshots/mutual-funds.png" alt="Mutual Fund Analyzer" width="100%"/>
+  <br/>
+  <em>Mutual Fund Analyzer - Upload CAS statements or manually add funds for portfolio health check</em>
+</p>
+
+<p align="center">
+  <img src="docs/screenshots/ai-advisor.png" alt="AI Advisor" width="100%"/>
+  <br/>
+  <em>AI Advisor - Chat interface powered by Gemini Pro for personalized investment guidance</em>
+</p>
+
+<p align="center">
+  <img src="docs/screenshots/stocks.png" alt="Stock Analysis" width="100%"/>
+  <br/>
+  <em>Stock Analysis - ML-powered predictions with sentiment analysis and trending stocks</em>
+</p>
+
+---
+
+## Core Intelligence
 
 Foresight goes beyond simple technical indicators. It employs a sophisticated **"Mixture of Experts"** approach to predict stock movements:
 
-### 🤖 The ML Prediction Ensemble
+### The ML Prediction Ensemble
 We don't rely on a single algorithm. Our system aggregates predictions from 5 distinct models to ensure robustness:
 1.  **ARIMA:** Statistical baseline for capturing linear trends.
-2.  **Facebook Prophet:** specialized in detecting seasonality and holiday effects.
+2.  **Facebook Prophet:** Specialized in detecting seasonality and holiday effects.
 3.  **XGBoost:** Gradient boosting for detecting non-linear direction patterns (Bullish/Bearish).
 4.  **LightGBM:** Optimized for predicting precise return magnitudes.
 5.  **Random Forest:** Estimating probability confidence intervals.
 
-### 📰 Multi-Source Sentiment Engine
+### Multi-Source Sentiment Engine
 Market moves are often driven by emotion. Foresight continuously scans and analyzes:
 *   **News Aggregation:** Real-time processing of NewsAPI, Google News, and RSS feeds from top Indian financial dailies (Economic Times, Moneycontrol).
 *   **Social Sentiment:** Analysis of retail sentiment from Reddit (r/IndiaInvestments, r/IndianStreetBets).
 *   **Macro Indicators:** Integration of global factors (S&P 500, Oil, Gold, USD/INR) and economic data (FRED API).
 
-### 💬 AI Investment Advisor
+### AI Investment Advisor
 Integrated with **Google Gemini Pro**, Foresight offers a chat interface that understands your portfolio context. Ask questions like:
 *   *"Analyze the risk factors for HDFCBANK given the recent RBI news."*
 *   *"How does my portfolio exposure compare to the Nifty 50?"*
 
 ---
 
-## ⚡ Tech Stack
+## Tech Stack
 
 ### Frontend (Modern & Fast)
-*   **Framework:** Next.js 16 (App Router)
+*   **Framework:** Next.js 14 (App Router)
 *   **Language:** TypeScript
-*   **Styling:** Tailwind CSS v4 + Shadcn/UI
+*   **Styling:** Tailwind CSS v3.4 + Shadcn/UI
 *   **Visualization:** Recharts & Lightweight Charts (TradingView style)
 *   **State Management:** Zustand & TanStack Query
 
 ### Backend (Robust & Scalable)
 *   **API:** FastAPI (Python)
 *   **Database:** PostgreSQL (via SQLAlchemy & AsyncPG)
-*   **ML Engine:** Scikit-learn, PyPortfolioOpt, Statsmodels
+*   **ML Engine:** Scikit-learn, XGBoost, LightGBM, Prophet, Statsmodels
 *   **Data Processing:** Pandas, NumPy
 *   **Caching:** Redis
 
 ---
 
-## 🛠️ Getting Started
+## Disclaimer
+
+> **IMPORTANT: Please read carefully before using this software.**
+
+### Not Financial Advice
+This software is for **educational and informational purposes only**. It does not constitute:
+- Investment advice
+- Financial advice
+- Trading recommendations
+- A solicitation to buy or sell securities
+
+### SEBI Compliance Notice
+This application is **NOT** registered with the Securities and Exchange Board of India (SEBI) as an Investment Adviser or Research Analyst. The predictions and analysis provided:
+- Are generated by machine learning models, not certified financial professionals
+- Should not be the sole basis for any investment decisions
+- Do not guarantee any returns or protection against losses
+
+### Risk Warning
+- **Past performance does not guarantee future results**
+- ML models achieve ~60-65% directional accuracy on historical backtests
+- Market conditions change; models may not reflect future behavior
+- You could lose some or all of your invested capital
+- Always consult a SEBI-registered investment adviser before investing
+
+### Limitation of Liability
+The developers and contributors of this project are not responsible for any financial losses, damages, or other consequences arising from the use of this software.
+
+---
+
+## Data Limitations
+
+| Source | Limitation |
+|--------|------------|
+| **Stock Data (yfinance)** | Unofficial API; may have delays, gaps, or rate limits (2 req/sec) |
+| **News Sentiment** | Aggregated from multiple sources; availability varies by region |
+| **API Rate Limits** | NewsAPI: 100/day, Reddit: 60/min, Finnhub: 60/min |
+| **Market Coverage** | Indian markets (NSE/BSE) only; requires exchange suffix (.NS/.BO) |
+| **Real-time Data** | Not available on free tier; prices may be delayed 15-20 minutes |
+
+---
+
+## ML Model Performance
+
+Based on walk-forward backtesting on historical data:
+
+| Metric | Value |
+|--------|-------|
+| **Directional Accuracy** | 60-65% overall |
+| **High Confidence (>0.7)** | 70-75% accuracy |
+| **Sharpe Ratio** | 1.0-1.5 |
+| **Best Signal** | High model agreement (>80%) |
+
+> **Note:** These metrics are historical and may not represent future performance. Market conditions constantly evolve.
+
+---
+
+## Getting Started
 
 Follow these steps to set up Foresight locally.
 
@@ -107,7 +191,7 @@ The UI will be available at `http://localhost:3000`.
 
 ---
 
-## 🔑 Configuration (.env)
+## Configuration (.env)
 
 Create a `.env` file in the `backend/` directory with the following variables:
 
@@ -132,19 +216,45 @@ REDDIT_CLIENT_SECRET=your_reddit_secret
 
 ---
 
-## 📊 Features Overview
+## Project Status
 
-| Feature | Status | Description |
-| :--- | :---: | :--- |
-| **Stock Analysis** | ✅ | Deep dive technicals, fundamentals, and AI predictions for NSE/BSE stocks. |
-| **Mutual Funds** | 🚧 | Track NAV history, overlapping holdings, and performance metrics. |
-| **Portfolio Optimizer** | 🚧 | HRP (Hierarchical Risk Parity) optimization to minimize risk. |
-| **News Feed** | ✅ | Aggregated financial news with sentiment scoring. |
-| **Paper Trading** | ⏳ | Simulate trades to test strategies without real money. |
+### Completed
+| Component | Status | Description |
+|-----------|--------|-------------|
+| **Backend API** | Done | FastAPI with 30+ endpoints |
+| **ML Prediction System** | Done | 5 models + ensemble predictor |
+| **Sentiment Analysis** | Done | Multi-source news & social aggregation |
+| **Global Factors** | Done | US markets, commodities, forex integration |
+| **Database Models** | Done | PostgreSQL with SQLAlchemy ORM |
+| **Frontend Scaffold** | Done | Next.js 14 + TypeScript + Tailwind |
+
+### In Progress
+| Component | Status | Description |
+|-----------|--------|-------------|
+| **Frontend UI** | 70% | Dashboard, stocks, mutual funds pages |
+| **Authentication** | Partial | JWT auth exists, needs ML endpoint integration |
+
+### Planned
+| Component | Description |
+|-----------|-------------|
+| **Redis Caching** | Cache predictions and sentiment for performance |
+| **Model Retraining** | Automated weekly model updates |
+| **Paper Trading** | Simulate trades without real money |
+| **Portfolio Optimizer** | HRP (Hierarchical Risk Parity) optimization |
 
 ---
 
-## 🤝 Contributing
+## Privacy
+
+- Portfolio data is stored locally in your configured database only
+- No telemetry or analytics are collected by the application
+- API keys are stored in your local `.env` file and never transmitted
+- Third-party API calls (Yahoo Finance, NewsAPI, etc.) are made directly from your server
+- No data is shared with the developers or any third parties
+
+---
+
+## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
@@ -156,12 +266,12 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
 <p align="center">
-  Built with ❤️ by Rithwik
+  Built with care by <strong>Rithwik</strong>
 </p>
